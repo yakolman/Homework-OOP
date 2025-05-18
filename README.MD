@@ -1,13 +1,13 @@
 # __Домашняя работа по теме:<br>"Объектно-ориентированное программирование"__
 
 ## __Задание № 1. Наследование__
--[x] _Добавлены дочерние классы (class Lecturer, class Reviewer) в родительский класс Mentor_<br>
+- _Добавлены дочерние классы (class Lecturer, class Reviewer) в родительский класс Mentor_<br>
 [Commit b25d3b5](https://github.com/yakolman/Homework-OOP/commit/b25d3b55b8a06f6dc9c9cafed613cccbb79c3c9f)
 
 ## __Задание № 2. Атрибуты и взаимодействие классов__
--[x] _Функция rate_hw адаптирована для Reviewer_
--[x] _Реализована функция (rate_lecturer) для оценки лекторов от студентов_<br>
--[x] _Создан объект cool_lecturer и реализована проверка результата_<br>
+- _Функция rate_hw адаптирована для Reviewer_<br>
+- _Реализована функция (rate_lecturer) для оценки лекторов от студентов_<br>
+- _Создан объект cool_lecturer и реализована проверка результата_<br>
 [Commit d78d6af](https://github.com/yakolman/Homework-OOP/commit/d78d6af8ce3408aca74c796bfb87e42aab3c7067)
 
 ## __Задание № 3. Полиморфизм и магические методы__
