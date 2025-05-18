@@ -3,6 +3,8 @@
 ## __Задание № 1. Наследование__
 - _Добавлены дочерние классы (class Lecturer, class Reviewer) в родительский класс Mentor_
 
+[Commit b25d3b5](https://github.com/yakolman/Homework-OOP/commit/b25d3b55b8a06f6dc9c9cafed613cccbb79c3c9f)
+
 ## __Задание № 2. Атрибуты и взаимодействие классов__
 - _text sample_
 
