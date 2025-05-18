@@ -7,8 +7,7 @@ class Student:
         self.courses_in_progress = []
         self.grades = {}
 
-    def __str__ (self):
-
+    def __str__ (self): #Перегружаем магический метод __str__
         return (f'Имя: {self.name}\n'
                 f'Фамилия: {self.surname}\n'
                 f'Средняя оценка за домашние задания: {self.get_average_grade()}\n'
@@ -24,7 +23,7 @@ class Student:
         else:
             return 'Ошибка'
 
-    def get_average_grade(self):
+    def get_average_grade(self):    #Функция нахождения средней оценки студента
         all_grades=[]
         for course, grade_list in self.grades.items():
             all_grades.extend(grade_list)
@@ -46,7 +45,7 @@ class Lecturer(Mentor):
         super().__init__(name, surname)
         self.grades = {}
 
-    def get_average_grade(self):
+    def get_average_grade(self):   #Функция нахождения средней оценки лектора
         all_grades = []
         for course, grade_list in self.grades.items():
             all_grades.extend(grade_list)
@@ -54,7 +53,7 @@ class Lecturer(Mentor):
             return "Ошибка"
         return sum(all_grades)/len(all_grades)
 
-    def __str__ (self):
+    def __str__ (self): #Перегружаем магический метод __str__
         return (f'Имя: {self.name}\n'
                 f'Фамилия: {self.surname}\n'
                 f'Средняя оценка за лекции: {self.get_average_grade()}\n')
@@ -70,7 +69,7 @@ class Reviewer(Mentor):
         else:
             return 'Ошибка'
 
-    def __str__ (self):
+    def __str__ (self): #Перегружаем магический метод __str__
         return (f'Имя: {self.name}\n'
                 f'Фамилия: {self.surname}\n')
 

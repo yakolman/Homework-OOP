@@ -11,7 +11,9 @@
 [Commit d78d6af](https://github.com/yakolman/Homework-OOP/commit/d78d6af8ce3408aca74c796bfb87e42aab3c7067)
 
 ## __Задание № 3. Полиморфизм и магические методы__
-- _text sample_ 
-
+- _Реализованы функции для нахождения средней оценки (get_average_grade) для Student и Lecturer_<br>
+- _Все классы перегружены магическим методом (\_\_str\_\_)_<br>
+- _Добавлены тесты для формализации итоговых результатов в соответствии с заданием_<br>
+[Commit 4535ef6](https://github.com/yakolman/Homework-OOP/commit/4535ef68474af0d71e882237f636875b36455563)<br>
 ## __Задание № 4. Полевые испытания__
 - _text sample_ 
