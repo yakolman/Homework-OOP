@@ -14,6 +14,36 @@ class Student:
                 f'Курсы в процессе изучения: {", ".join(self.courses_in_progress)}\n'
                 f'Завершенные курсы: {", ".join(self.finished_courses)}\n')
 
+    def __eq__(self, other):    #Магический метод сравнения "=="
+        if isinstance(other, Student):
+            return self.get_average_grade()==other.get_average_grade()
+        return NotImplemented
+
+    def __ne__(self, other):    #Магический метод сравнения "!="
+        if isinstance(other, Student):
+            return self.get_average_grade()!=other.get_average_grade()
+        return NotImplemented
+
+    def __lt__(self, other):    #Магический метод сравнения "<"
+        if isinstance(other, Student):
+            return self.get_average_grade()<other.get_average_grade()
+        return NotImplemented
+
+    def __gt__(self, other):    #Магический метод сравнения ">"
+        if isinstance(other, Student):
+            return self.get_average_grade()>other.get_average_grade()
+        return NotImplemented
+
+    def __le__(self, other):    #Магический метод сравнения "<="
+        if isinstance(other, Student):
+            return self.get_average_grade()<=other.get_average_grade()
+        return NotImplemented
+
+    def __ge__(self, other):    #Магический метод сравнения ">="
+        if isinstance(other, Student):
+            return self.get_average_grade()>=other.get_average_grade()
+        return NotImplemented
+
     def rate_lecturer(self, lecturer, course, grade):   #Реализация функции оценки лекторов от студентов
         if isinstance(lecturer, Lecturer) and course in lecturer.courses_attached and course in self.courses_in_progress:
             if course in lecturer.grades:
@@ -58,6 +88,36 @@ class Lecturer(Mentor):
                 f'Фамилия: {self.surname}\n'
                 f'Средняя оценка за лекции: {self.get_average_grade()}\n')
 
+    def __eq__(self, other):    #Магический метод сравнения "=="
+        if isinstance(other, Lecturer):
+            return self.get_average_grade()==other.get_average_grade()
+        return NotImplemented
+
+    def __ne__(self, other):    #Магический метод сравнения "!="
+        if isinstance(other, Lecturer):
+            return self.get_average_grade()!=other.get_average_grade()
+        return NotImplemented
+
+    def __lt__(self, other):    #Магический метод сравнения "<"
+        if isinstance(other, Lecturer):
+            return self.get_average_grade()<other.get_average_grade()
+        return NotImplemented
+
+    def __gt__(self, other):    #Магический метод сравнения ">"
+        if isinstance(other, Lecturer):
+            return self.get_average_grade()>other.get_average_grade()
+        return NotImplemented
+
+    def __le__(self, other):    #Магический метод сравнения "<="
+        if isinstance(other, Lecturer):
+            return self.get_average_grade()<=other.get_average_grade()
+        return NotImplemented
+
+    def __ge__(self, other):    #Магический метод сравнения ">="
+        if isinstance(other, Lecturer):
+            return self.get_average_grade()>=other.get_average_grade()
+        return NotImplemented
+
 
 class Reviewer(Mentor):
     def rate_hw(self, student, course, grade):  #Адаптация функции rate_hw для Reviewer
@@ -73,15 +133,16 @@ class Reviewer(Mentor):
         return (f'Имя: {self.name}\n'
                 f'Фамилия: {self.surname}\n')
 
-some_student = Student('Ruoy', 'Eman', 'your_gender')
+some_student = Student('Ruoy', 'Eman', 'male')
 some_student.courses_in_progress += ['Python','Git']
 some_student.finished_courses += ['Введение в программирование']
 
+
 some_reviewer = Reviewer('Some', 'Buddy')
-some_reviewer.courses_attached += ['Python']
+some_reviewer.courses_attached += ['Python','Git']
 
 some_lecturer = Lecturer('Some', 'Buddy')
-some_lecturer.courses_attached += ['Python']
+some_lecturer.courses_attached += ['Python','Git']
 
 some_reviewer.rate_hw(some_student, 'Python', 10)
 some_reviewer.rate_hw(some_student, 'Python', 10)
@@ -89,10 +150,10 @@ some_reviewer.rate_hw(some_student, 'Python', 10)
 some_reviewer.rate_hw(some_student, 'Python', 10)
 some_reviewer.rate_hw(some_student, 'Python', 10)
 some_reviewer.rate_hw(some_student, 'Python', 10)
-some_reviewer.rate_hw(some_student, 'Python', 10)
-some_reviewer.rate_hw(some_student, 'Python', 10)
-some_reviewer.rate_hw(some_student, 'Python', 10)
-some_reviewer.rate_hw(some_student, 'Python', 9)
+some_reviewer.rate_hw(some_student, 'Git', 10)
+some_reviewer.rate_hw(some_student, 'Git', 10)
+some_reviewer.rate_hw(some_student, 'Git', 10)
+some_reviewer.rate_hw(some_student, 'Git', 9)
 
 some_student.rate_lecturer(some_lecturer, 'Python', 10)
 some_student.rate_lecturer(some_lecturer, 'Python', 10)
@@ -100,10 +161,10 @@ some_student.rate_lecturer(some_lecturer, 'Python', 10)
 some_student.rate_lecturer(some_lecturer, 'Python', 10)
 some_student.rate_lecturer(some_lecturer, 'Python', 10)
 some_student.rate_lecturer(some_lecturer, 'Python', 10)
-some_student.rate_lecturer(some_lecturer, 'Python', 10)
-some_student.rate_lecturer(some_lecturer, 'Python', 10)
-some_student.rate_lecturer(some_lecturer, 'Python', 10)
-some_student.rate_lecturer(some_lecturer, 'Python', 9)
+some_student.rate_lecturer(some_lecturer, 'Git', 10)
+some_student.rate_lecturer(some_lecturer, 'Git', 10)
+some_student.rate_lecturer(some_lecturer, 'Git', 10)
+some_student.rate_lecturer(some_lecturer, 'Git', 9)
 
 print(some_reviewer)
 print(some_lecturer)
