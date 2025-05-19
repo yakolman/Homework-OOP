@@ -53,10 +53,10 @@ class Student:
         else:
             return 'Ошибка'
 
-    def get_average_grade(self):    #Функция нахождения средней оценки студента
+    def get_average_grade(self):    #Функция нахождения средней оценки для студента
         all_grades=[]
         for course, grade_list in self.grades.items():
-            all_grades.extend(grade_list)
+            all_grades.extend(grade_list) 
         if not all_grades:
             return "Ошибка"
         return sum(all_grades)/len(all_grades)
@@ -75,7 +75,7 @@ class Lecturer(Mentor):
         super().__init__(name, surname)
         self.grades = {}
 
-    def get_average_grade(self):   #Функция нахождения средней оценки лектора
+    def get_average_grade(self):   #Функция нахождения средней оценки для лектора
         all_grades = []
         for course, grade_list in self.grades.items():
             all_grades.extend(grade_list)
