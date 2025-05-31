@@ -18,4 +18,4 @@
 ## __Задание № 4. Полевые испытания__
 - _Реализованы функции для нахождения средней оценки (get_average_grade) для Student и Lecturer_<br>
 - _Созданы экземпляры классов для тестирования реализованных методов_<br>
-[Commit 7eec376](https://github.com/yakolman/Homework-OOP/commit/7eec3762d012251fba50b8c0b14b17924c29d436)<br>
+[Commit cd2b395](https://github.com/yakolman/Homework-OOP/commit/cd2b3956e297a953a140b4f51cc4d39a03c0e79b<br>
