@@ -56,7 +56,7 @@ class Student:
     def get_average_grade(self):    #Функция нахождения средней оценки для студента
         all_grades=[]
         for course, grade_list in self.grades.items():
-            all_grades.extend(grade_list) 
+            all_grades.extend(grade_list)
         if not all_grades:
             return "Ошибка"
         return sum(all_grades)/len(all_grades)
@@ -243,3 +243,31 @@ print("_"*47)
 print("Средние оценки лекторов:")
 print(f"Лектор {lecturer1.name}: {lecturer1.get_average_grade()}")
 print(f"Лектор {lecturer2.name}: {lecturer2.get_average_grade()}")
+
+# Реализация функции для подсчета средней оценки за домашние задания по всем студентам в рамках конкретного курса
+def average_grade_st_course(students, course):
+    all_grades = []
+    for student in students:
+        if isinstance(student, Student) and course in student.grades:
+            all_grades.extend(student.grades[course])
+    if not all_grades:
+        return "Ошибка"
+    return sum(all_grades) / len(all_grades)
+
+# Реализация функции для подсчета средней оценки за лекции всех лекторов в рамках курса
+def average_grade_lc_course(lecturers, course):
+    all_grades = []
+    for lecturer in lecturers:
+        if isinstance(lecturer, Lecturer) and course in lecturer.grades:
+            all_grades.extend(lecturer.grades[course])
+    if not all_grades:
+        return "Ошибка"
+    return sum(all_grades) / len(all_grades)
+
+# Тестовые данные и проверка
+print("_"*47)
+print("Средние оценки по курсам:")
+print(f"Студенты (Python): {average_grade_st_course([student1, student2], 'Python')}")
+print(f"Студенты (Git): {average_grade_st_course([student1, student2], 'Git')}")
+print(f"Лекторы (Python): {average_grade_lc_course([lecturer1, lecturer2], 'Python')}")
+print(f"Лекторы (Git): {average_grade_lc_course([lecturer1, lecturer2], 'Git')}")
